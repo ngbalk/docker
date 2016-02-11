@@ -1,0 +1,13 @@
+FROM centos
+
+RUN yum install -y unzip && yum install -y java
+
+ADD http://download.sonatype.com/clm/server/nexus-iq-server-1.17.0-02-bundle.zip?elqid=d68c23a6-5c1a-4919-bfce-09e93169cb4a /
+
+RUN unzip /nexus-iq-server-1.17.0-02-bundle.zip
+
+EXPOSE 8070
+
+ENTRYPOINT bash demo.sh
+
+
